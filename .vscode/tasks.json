@@ -4,7 +4,7 @@
         {
             "label": "🟢 Cron開始（5分ごと自動commit＋push）",
             "type": "shell",
-            "command": "/workdir/cron-manage.sh",
+            "command": "/workdir/.vscode/cron-manage.sh",
             "args": [
                 "start"
             ],
@@ -19,7 +19,7 @@
         {
             "label": "🟡 Cron開始（5分ごと自動commit、pushなし）",
             "type": "shell",
-            "command": "/workdir/cron-manage.sh",
+            "command": "/workdir/.vscode/cron-manage.sh",
             "args": [
                 "start-no-push"
             ],
@@ -34,7 +34,7 @@
         {
             "label": "🛑 Cron停止",
             "type": "shell",
-            "command": "/workdir/cron-manage.sh",
+            "command": "/workdir/.vscode/cron-manage.sh",
             "args": [
                 "stop"
             ],
@@ -49,7 +49,7 @@
         {
             "label": "❓ Cron状態確認",
             "type": "shell",
-            "command": "/workdir/cron-manage.sh",
+            "command": "/workdir/.vscode/cron-manage.sh",
             "args": [
                 "status"
             ],
@@ -68,7 +68,7 @@
             "args": [
                 "-n",
                 "20",
-                "/workdir/.auto-commit.log"
+                "/workdir/.vscode/.auto-commit.log"
             ],
             "problemMatcher": [],
             "presentation": {
