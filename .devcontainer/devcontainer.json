@@ -7,6 +7,7 @@
   ],
   "workspaceFolder": "/workdir",
   "shutdownAction": "stopCompose",
+  "postStartCommand": "service cron start && if [ -f /root/.cron-state ] && grep -q 'stopped' /root/.cron-state; then service cron stop; fi",
   "customizations": {
     "vscode": {
       "extensions": [
