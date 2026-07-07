@@ -1,8 +1,13 @@
 {
-  "plugins": ["latex2e"],
+  "plugins": [
+    "latex2e"
+  ],
   "filters": {},
   "rules": {
     "preset-ja-technical-writing": {
+      "no-mix-dearu-desumasu": {
+        "prefer": "である"
+      },
       "sentence-length": false,
       "ja-no-mixed-period": {
         "periodMark": "．",
