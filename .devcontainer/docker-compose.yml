@@ -1,5 +1,9 @@
 services:
   ubuntu-texlive-ja:
+    # Built by initializeCommand.sh. Having no "build:" here keeps the Dev Containers
+    # extension from building via a temp Dockerfile, which docker compose (bake) rejects.
+    image: graduation-thesis-devcontainer
+    pull_policy: never
     build: .
     command: sleep infinity
     volumes:
