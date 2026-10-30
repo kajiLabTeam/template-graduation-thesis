@@ -1,4 +1,4 @@
-FROM ubuntu:25.04@sha256:3fa335765c57a9ef67f62ef33b4411266c576f4dbdd9d5255f5da2ac306e021f
+FROM ubuntu:26.04@sha256:6a06111c3b0a8600feadb270aec771dc239bf407b25625f93f44ab00e11f4d3c22rrs
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -15,11 +15,16 @@ RUN apt-get update && apt-get install -y \
     cpanminus \
     texlive-extra-utils \
     make \
-    npm
+    npm \
+    gh \
+    tzdata
 
 RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/*
 RUN kanji-config-updmap-sys ipaex
+
+ENV TZ=Asia/Tokyo
+RUN ln -sf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 WORKDIR /workdir
 VOLUME ["/workdir"]
